@@ -1,0 +1,4 @@
+[package]
+name = "cpp_feature_tests"
+version = "0.1.0"
+authors = ["Hendrik Sollich <hendrik@hoodie.de>"]
