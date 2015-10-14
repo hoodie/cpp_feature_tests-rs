@@ -56,10 +56,14 @@ fn main()
         tp.send(Some((i,work_tup.clone())));
     }
 
-    let mut ress:Vec<(index, i32)> = Vec::with_capacity(work.len());
+    //let mut ress:Vec<i32> = Vec::with_capacity(work.len());
+    let mut ress = (0..work.len() as i32).collect::<Vec<i32>>();
+
     for work in work{
-        let r = rp.recv().unwrap();
-        ress.insert(i,r);
+        let (i, r) = rp.recv().unwrap();
+        ress[i] = r;
     }
+
+    println!("{:?}", ress);
 
 }
